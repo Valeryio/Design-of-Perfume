@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Fraunces';
+    src: url('Fraunces-9ptBlack.woff2') format('woff2'),
+        url('Fraunces-9ptBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Light.woff2') format('woff2'),
+        url('Montserrat-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: url('MontserratAlternates-Regular.woff2') format('woff2'),
+        url('MontserratAlternates-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

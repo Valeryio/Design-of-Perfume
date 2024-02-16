@@ -1,26 +1,26 @@
 :root
 {
-    --viridian: #3d8068;
-    --Dark_cyan: hsl(158, 36%, 37%);
-    --green: hsl(212, 21%, 14%);
-    --Cream: hsl(30, 38%, 92%);
-    --clair_green: hsl(228, 12%, 48%);
-    --linen: #f3eae3;
+    /*
+    // Primary colors
+    */
+    --cls-primary-cream: hsl(30, 38%, 92%);
+    --cls-primary-violet: hsl(228, 45%, 44%);
+    --cls-primary-dark-cyan: hsl(158, 36%, 37%);
+
+    /*
+    // Neutral colors
+    */
+    --cls-neutral-white: hsl(0, 0%, 100%);
+    --cls-neutral-dark-blue: hsl(212, 21%, 14%);
+    --cls-neutral-grayish-blue: hsl(228, 12%, 48%);
 }
 
-
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 @font-face {
     font-family: 'Montserrat';
     src: url('2/Montserrat-Light.woff2') format('woff2'),
         url('2/Montserrat-Light.woff') format('woff');
-    font-weight: 300;
+    /* font-weight: 300; */
     font-style: normal;
     font-display: swap;
 }
@@ -29,7 +29,7 @@
     font-family: 'Fraunces';
     src: url('2/Fraunces-9ptBlack.woff2') format('woff2'),
         url('2/Fraunces-9ptBlack.woff') format('woff');
-    font-weight: 900;
+    /* font-weight: 900; */
     font-style: normal;
     font-display: swap;
 }

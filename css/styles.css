@@ -3,39 +3,224 @@
     /*
     // Primary colors
     */
-    --cls-primary-cream: hsl(30, 38%, 92%);
-    --cls-primary-violet: hsl(228, 45%, 44%);
-    --cls-primary-dark-cyan: hsl(158, 36%, 37%);
+    --clr-primary-cream: hsl(30, 38%, 92%);
+    --clr-primary-violet: hsl(228, 45%, 44%);
+    --clr-primary-cyan: hsl(158, 36%, 37%);
+    --clr-primary-dark-cyan: hsl(158, 36%, 17%);
 
     /*
     // Neutral colors
     */
-    --cls-neutral-white: hsl(0, 0%, 100%);
-    --cls-neutral-dark-blue: hsl(212, 21%, 14%);
-    --cls-neutral-grayish-blue: hsl(228, 12%, 48%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-dark-blue: hsl(212, 21%, 14%);
+    --clr-neutral-grayish-blue: hsl(228, 12%, 48%);
+
+    /*
+    // Font accentuated and base font used through the project    */
+
+    --ff-accent: 'Fraunces', serif;
+    --ff-base: 'Montserrat', sans-serif;
+
+    --fw-bold: 700;
+    --fw-regular: 500;
+}
+
+body
+{
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    font-size: 0.875rem;
+    color: var(--clr-neutral-dark-blue);
+    background-color: var(--clr-primary-cream);
+
+    /*For this project only*/
+    display: grid;
+    gap: 80px;
+    min-height: 100vh;
+    padding: 1rem;
+    place-content: center;
+}
+
+/* Utilities */
+.flex-group
+{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.visually-hidden:not(:focus):not(:active)
+{
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  /* button */
+.button
+{
+    cursor: pointer;
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
+    
+    border: none;
+    border-radius: 0.5em;
+    font-size: 0.975rem;
+    text-decoration: none;
+    padding: 0.75em 1.5em;
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-white);
+    background-color: var(--clr-primary-cyan);
+}
+
+.button:is(:hover, :focus)
+{
+    background-color: var(--clr-primary-dark-cyan);
+    
+}
+
+.button[data-icon="shopping-cart"]::before
+{
+    content: '';
+    width: 15px;
+    height: 16px;
+    background-image: url(/ressources/icons/icon-cart.svg);
 }
 
 
-@font-face {
-    font-family: 'Montserrat';
-    src: url('2/Montserrat-Light.woff2') format('woff2'),
-        url('2/Montserrat-Light.woff') format('woff');
-    /* font-weight: 300; */
-    font-style: normal;
-    font-display: swap;
+/*
+/ Modification for an animated button
+*/
+
+.button[data-icon="shopping-cart"]
+{
+    transition-property: transform, background-color;
+    transition:  ease-in-out 0.5s;
 }
 
-@font-face {
-    font-family: 'Fraunces';
-    src: url('2/Fraunces-9ptBlack.woff2') format('woff2'),
-        url('2/Fraunces-9ptBlack.woff') format('woff');
-    /* font-weight: 900; */
-    font-style: normal;
-    font-display: swap;
+.button[data-icon="shopping-cart"]:hover
+{
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+    transform: translate(1px, 2px);
+}
+
+/*
+/ End of the modification for an animated button
+*/
+
+
+/* General code */
+
+.product
+{
+    /*Local variables*/
+    --content-padding: 1.5rem;
+    --content-spacing: 0.5rem;
+
+    display: grid;
+    overflow: hidden;
+    max-width: 600px;
+    min-width: 360px;
+    border-radius: 0.5rem;
+    transition: box-shadow ease-in-out 0.5s;
+    background-color: var(--clr-neutral-white);
+}
+
+.product:hover
+{
+    box-shadow: 4px 4px 16px 6px rgba(0, 0, 0, 0.1);
 }
 
 
+@media screen and (min-width: 600px) 
+{
+    .product
+    {
+        --content-padding: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+    }   
+}
 
+
+.product__content
+{
+    display: grid;
+    gap: var(--content-spacing);
+    padding: var(--content-padding);
+}
+
+
+/*
+/ Modification for an animated image
+*/
+
+picture img
+{
+    transition: transform ease-in-out 0.5s;
+}
+
+picture img:hover
+{
+    transform: scale(1.005);
+}
+
+/*
+/ End of the modification for an animated image
+*/
+
+
+.product__category
+{
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.product__title
+{
+    font-family: var(--ff-accent);
+    font-size: 2rem;
+    color: var(--clr-neutral-dark-blue);
+}
+
+.product__price__promotion
+{
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-cyan);
+}
+
+
+footer
+{
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+footer a
+{
+    color: var(--clr-primary-dark-cyan);
+    font-weight: var(--fw-bold);
+}
+
+
+/*
+// LEGACY code style 2022
+*/
+
+/*
 
 body
 {
@@ -44,8 +229,7 @@ body
     height: 180vh;
     align-items: center;
     flex-flow: column wrap;
-    background-color: var(--linen);
-    background-color: var(--Cream);
+    background-color: var(--cls-primary-cream);
     justify-content: space-around;
 }
 
@@ -55,7 +239,6 @@ body
     height: 350px;
     display: inherit;
     border-radius: 1rem;
-    /*border: 1px solid black;*/
 }
 
 .card div:nth-child(1)
@@ -64,8 +247,7 @@ body
     height: 100%;
     background-size: cover;
     border-radius: 8px 0 0 8px;
-    background-image: url(images/image-product-desktop.jpg);
-    /*border: 1px solid crimson;*/
+    background-image: url(/ressources/images/image-product-desktop.jpg);
 }
 
 .card div:nth-child(2)
@@ -76,7 +258,6 @@ body
     position: relative;
     border-radius: 0 8px 8px 0;
     background-color: white;
-    /*border: 1px solid rgb(13, 0, 84);*/
 }
 
 .card h1
@@ -155,4 +336,4 @@ button span:nth-child(1)
 button span:nth-child(2)
 {
     margin: 10px; 
-}
+}*/

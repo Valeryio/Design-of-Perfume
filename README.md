@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://design-of-perfume.vercel.app/)
+- Live Site URL: [Add live site URL here](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa)
 
 
 ## My process

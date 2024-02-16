@@ -1,6 +1,7 @@
 # Frontend Mentor - Product preview card component solution
 
-This is a solution to the [Product preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Product preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa).
+
 
 ## Table of contents
 
@@ -46,6 +47,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
+This is an update. I just read a tons of articles, and learn about HTML semantics, and follow some youtube tutorials to learn from some very great developers. I put the link in the ressources !
+
 ### Built with
 
 - Semantic HTML5 markup
@@ -53,13 +56,14 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
+
+I learned a bunch of stuffs. Started with a great way to structure its CSS project.
+- Using normalise CSS files ([Use this one of Josh Comeau](https://www.joshwcomeau.com/css/custom-css-reset/))
+- Creating not-only **color variables**, but also fonts...
+- Using local scope of variables in CSS
+- A great way to design buttons in CSS
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 

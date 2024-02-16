@@ -1,0 +1,339 @@
+:root
+{
+    /*
+    // Primary colors
+    */
+    --clr-primary-cream: hsl(30, 38%, 92%);
+    --clr-primary-violet: hsl(228, 45%, 44%);
+    --clr-primary-cyan: hsl(158, 36%, 37%);
+    --clr-primary-dark-cyan: hsl(158, 36%, 17%);
+
+    /*
+    // Neutral colors
+    */
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-dark-blue: hsl(212, 21%, 14%);
+    --clr-neutral-grayish-blue: hsl(228, 12%, 48%);
+
+    /*
+    // Font accentuated and base font used through the project    */
+
+    --ff-accent: 'Fraunces', serif;
+    --ff-base: 'Montserrat', sans-serif;
+
+    --fw-bold: 700;
+    --fw-regular: 500;
+}
+
+body
+{
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    font-size: 0.875rem;
+    color: var(--clr-neutral-dark-blue);
+    background-color: var(--clr-primary-cream);
+
+    /*For this project only*/
+    display: grid;
+    gap: 80px;
+    min-height: 100vh;
+    padding: 1rem;
+    place-content: center;
+}
+
+/* Utilities */
+.flex-group
+{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.visually-hidden:not(:focus):not(:active)
+{
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  /* button */
+.button
+{
+    cursor: pointer;
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
+    
+    border: none;
+    border-radius: 0.5em;
+    font-size: 0.975rem;
+    text-decoration: none;
+    padding: 0.75em 1.5em;
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-white);
+    background-color: var(--clr-primary-cyan);
+}
+
+.button:is(:hover, :focus)
+{
+    background-color: var(--clr-primary-dark-cyan);
+    
+}
+
+.button[data-icon="shopping-cart"]::before
+{
+    content: '';
+    width: 15px;
+    height: 16px;
+    background-image: url(/ressources/icons/icon-cart.svg);
+}
+
+
+/*
+/ Modification for an animated button
+*/
+
+.button[data-icon="shopping-cart"]
+{
+    transition-property: transform, background-color;
+    transition:  ease-in-out 0.5s;
+}
+
+.button[data-icon="shopping-cart"]:hover
+{
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+    transform: translate(1px, 2px);
+}
+
+/*
+/ End of the modification for an animated button
+*/
+
+
+/* General code */
+
+.product
+{
+    /*Local variables*/
+    --content-padding: 1.5rem;
+    --content-spacing: 0.5rem;
+
+    display: grid;
+    overflow: hidden;
+    max-width: 600px;
+    min-width: 360px;
+    border-radius: 0.5rem;
+    transition: box-shadow ease-in-out 0.5s;
+    background-color: var(--clr-neutral-white);
+}
+
+.product:hover
+{
+    box-shadow: 4px 4px 16px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+@media screen and (min-width: 600px) 
+{
+    .product
+    {
+        --content-padding: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+    }   
+}
+
+
+.product__content
+{
+    display: grid;
+    gap: var(--content-spacing);
+    padding: var(--content-padding);
+}
+
+
+/*
+/ Modification for an animated image
+*/
+
+picture img
+{
+    transition: transform ease-in-out 0.5s;
+}
+
+picture img:hover
+{
+    transform: scale(1.005);
+}
+
+/*
+/ End of the modification for an animated image
+*/
+
+
+.product__category
+{
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.product__title
+{
+    font-family: var(--ff-accent);
+    font-size: 2rem;
+    color: var(--clr-neutral-dark-blue);
+}
+
+.product__price__promotion
+{
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-cyan);
+}
+
+
+footer
+{
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+footer a
+{
+    color: var(--clr-primary-dark-cyan);
+    font-weight: var(--fw-bold);
+}
+
+
+/*
+// LEGACY code style 2022
+*/
+
+/*
+
+body
+{
+    width: 100vw;
+    display: flex;
+    height: 180vh;
+    align-items: center;
+    flex-flow: column wrap;
+    background-color: var(--cls-primary-cream);
+    justify-content: space-around;
+}
+
+.card
+{
+    width: 500px;
+    height: 350px;
+    display: inherit;
+    border-radius: 1rem;
+}
+
+.card div:nth-child(1)
+{
+    width: 48%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 8px 0 0 8px;
+    background-image: url(/ressources/images/image-product-desktop.jpg);
+}
+
+.card div:nth-child(2)
+{
+    width: 52%;
+    height: 100%;
+    padding: 20px;
+    position: relative;
+    border-radius: 0 8px 8px 0;
+    background-color: white;
+}
+
+.card h1
+{
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: Montserrat;
+
+}
+
+.card h2
+{
+    line-height: 1.5rem;
+    font-size: 1.6rem;
+    font-family: Fraunces;
+    padding-bottom: 18px;
+}
+
+.card p
+{
+    
+    font-size: 13px;
+    font-weight: bold;
+    padding-bottom: 12px;
+    line-height: 20px;
+    color: rgba(62, 61, 61, 0.9);
+    font-family: Montserrat;
+    
+}
+
+.normal
+{
+    right: 35%;
+    bottom: 6rem;
+    font-weight: 900;
+    position: absolute;
+    font-size: 0.6rem;
+    color: rgb(0, 0, 0);
+    text-decoration: line-through;
+    font-family: Montserrat;
+}
+
+.reduction
+{
+    font-size: 1.5rem;
+    position: absolute;
+    font-weight: 900;
+    color: var(--viridian);
+    font-family: Fraunces;
+}
+
+
+.card button
+{
+    left: 20px;
+    width: 80%;
+    height: 40px;
+    bottom: 1.8rem;
+    border: none;
+    font-size: 14px;  
+    font-weight: 500;
+    color: hsl(0, 0%, 100%);
+    background-color: var(--viridian);
+    border-radius: 8px;
+    position: absolute;
+}
+
+button span:nth-child(1)
+{
+    top: 5px;
+    position: relative;
+}
+
+button span:nth-child(2)
+{
+    margin: 10px; 
+}*/
